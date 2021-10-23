@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+.main{
+    height: 768px;
+    width: 1024px;
+    display: flex;
+    flex-direction: column;
+}
+/* top */
+.top{
+    flex-basis: 120px;
+    width: 100%;
+    background-image: url('../images/0401.jpg');
+    text-align: center;   
+    font-size: 52px;
+    font-family: "標楷體";
+    color: #ffffff;
+    text-shadow: 10px 10px 15px #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/* main-content */
+.main-content{
+    flex-basis: calc(100% - 120px - 78px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/0402.jpg);
+}
+/* main-content .marquee */
+.marquee{
+    flex-basis: 30px;
+    width: 100%;
+    /* background-color: cornflowerblue; */
+    
+    font-family: "標楷體";
+    color: #0000ff;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+}
+/* main-content .content */
+.content{
+    flex-basis: calc(100% - 30px);
+    width: 100%;
+    /* background-color: chocolate; */
+}
+
+
+/* footer */
+.footer{
+    flex-basis: 78px;
+    width: 100%;
+    background-color: #666600;
+    color:#ffffff;
+    font-family: "標楷體";
+    line-height: 2;
+    text-align: left;
+}
+.footer>a:link{
+color:#ffffff;
+}
+.footer>a:visited{
+color:#ff9999;
+}
