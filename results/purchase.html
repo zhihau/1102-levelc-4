@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table{
+        .main {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        table {
             background-color: #ffff99;
             text-align: center;
-            border:1px solid black;
+            border: 1px solid black;
             border-collapse: collapse;
         }
-        td{
-            border:1px solid black;
+
+        td {
+            border: 1px solid black;
             width: 400px;
             vertical-align: middle;
         }
-        .row1,.row3{
+
+        .row1,
+        .row3 {
             height: 100px;
         }
-        .row2{
+
+        .row2 {
             height: 150px;
         }
-        .row2 img{
+
+        .row2 img {
             height: 150px;
             width: auto;
 
         }
     </style>
+    <script>
+        function send() {
+            buy1 = document.querySelector("input[name='buy1']:checked").value;
+            buy2 = document.querySelector("input[name='buy2']:checked").value;
+            alert("流行皮件選購確認：\n真皮皮包：" + buy1 + "\n真皮短夾：" + buy2);
+
+        }
+        function reset() {
+            resetRadioButtons("buy1", 0);
+            resetRadioButtons("buy2", 2);
+        }
+        function resetRadioButtons(name, def) {
+            elm = document.querySelector("input[name='" + name + "']:checked");
+            if (elm) {
+                elm.checked = false;
+            }
+            document.querySelectorAll("input[name='" + name + "']")[def].checked = true;
+        }
+    </script>
 </head>
-<body>
+
+<body class="main">
     <table>
         <tr class="row1">
             <td>真皮皮包</td>
@@ -44,10 +76,23 @@
 
 
 
-            <td><input type="radio" name="buy" id="" checked>購買<input type="radio" name="buy" id="">不購買<input type="radio" name="buy" id="">考慮中</td>
-            <td><input type="radio" name="buy" id="" >購買<input type="radio" name="buy" id="">不購買<input type="radio" name="buy" id="" checked>考慮中</td>
-            
+            <td>
+                <input type="radio" name="buy1" id="" value="購買" checked>購買<input type="radio" name="buy1" id=""
+                    value="不購買">不購買<input type="radio" name="buy1" id="" value="考慮中">考慮中
+            </td>
+            <td>
+                <input type="radio" name="buy2" id="" value="購買">購買
+                <input type="radio" name="buy2" id="" value="不購買">不購買<input type="radio" name="buy2" id="" value="考慮中"
+                    checked>考慮中
+            </td>
+
         </tr>
     </table>
+    <nav class="nav">
+        <input type="button" value="送出" onclick="send()">
+        <input type="button" value="重置" onclick="reset()">
+
+    </nav>
 </body>
+
 </html>
